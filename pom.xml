@@ -6,7 +6,7 @@
 
   <groupId>com.adityakotari.adclu</groupId>
   <artifactId>adclu</artifactId>
-  <version>0.1</version>
+  <version>0.2</version>
 
   <name>adclu</name>
   <!-- FIXME change it to the project's website -->
@@ -29,10 +29,18 @@
       <groupId>com.beust</groupId>
       <artifactId>jcommander</artifactId>
       <version>1.78</version>
-  </dependency>
+    </dependency>
+    <dependency>
+      <groupId>org.fusesource.jansi</groupId>
+      <artifactId>jansi</artifactId>
+      <version>2.1.0</version>
+    </dependency>
   </dependencies>
 
   <build>
+    <finalName>
+      adclu
+    </finalName>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->

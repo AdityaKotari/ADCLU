@@ -1,23 +1,28 @@
 package com.adityakotari.adclu;
 
-import com.beust.jcommander.JCommander;
-import com.beust.jcommander.Parameter;
+import java.io.IOException;
+
+import org.fusesource.jansi.AnsiConsole;
 
 public class App {
-    @Parameter(names={"greet", "g"}, description = "Takes a String input and greets them.")
-    String greetee="";
-    public static void main( String[] args ) {
-        App app = new App();
-        JCommander.newBuilder()
-            .addObject(app)
-            .build()
-            .parse(args);
-        app.run();
+     
+    public static final String ANSI_RED = "\u001B[31m";     
+    public static final String ANSI_RESET = "\u001B[0m"; 
+
+    public static void main( String[] args )throws IOException {
+        
+        Parsed parsed = new Parsed( args );
+        run(parsed);
     }
-    public void run() {
-        if(this.greetee!="")
-            System.out.println("Hello "+greetee+"!");
+
+    
+    public static void run(Parsed parsed) throws IOException{
+
+        if(parsed.greetee!=null)
+            System.out.println("Hello "+parsed.greetee+"!");
+        else if(!parsed.diffFilePaths.isEmpty())
+            Diff.run(parsed);
         else
-            System.out.println( "Maven is hard... :(" );
+            System.out.println("Wrong input parameters, please try again.");
     }
 }
