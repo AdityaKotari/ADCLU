@@ -1,3 +1,5 @@
-com\adityakotari\adclu\App.class
+com\adityakotari\adclu\SqlFuncs.class
 com\adityakotari\adclu\Parsed.class
+com\adityakotari\adclu\App.class
+com\adityakotari\adclu\Tasks.class
 com\adityakotari\adclu\Diff.class

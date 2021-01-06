@@ -9,6 +9,9 @@ public class Parsed {
     @Parameter(names={"greet", "g"}, description = "Takes a String input and greets them.")
     String greetee;
 
+    @Parameter(names = {"task", "t"}, variableArity = true, description = "A task management service.")
+    ArrayList<String> taskArgs = new ArrayList<>();
+
     @Parameter(names = {"diff", "d"}, variableArity = true, description = "Finds the difference between two given files.")
     ArrayList<String> diffFilePaths = new ArrayList<>();
     
